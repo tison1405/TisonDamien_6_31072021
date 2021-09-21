@@ -24,6 +24,7 @@ Bcrypte:npm install --save bcrypt
 CryptoJs: npm install --save cryptojs
 Jsonwebtoken: npm install --save jsonwebtoken
 Multer:npm install --save multer
+dotenv : npm i express dotenv
 6. TAPER dans le terminal du dossier racine Backend
             cd backend
             node server
