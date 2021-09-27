@@ -25,6 +25,11 @@ CryptoJs: npm install --save cryptojs
 Jsonwebtoken: npm install --save jsonwebtoken
 Multer:npm install --save multer
 dotenv : npm i express dotenv
+Completer le Fichier env.sample:
+connection_mongoDb = (votre chemin d'acces a mongoDB)
+cryptoKey = (suite de chiffres et de lettres de votre choix)
+cryptoIv = (suite de chiffres et de lettres de votre choix)
+tokenKey = (suite de chiffres et de lettres de votre choix)
 6. TAPER dans le terminal du dossier racine Backend
             cd backend
             node server
