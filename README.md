@@ -25,7 +25,7 @@ CryptoJs: npm install --save cryptojs
 Jsonwebtoken: npm install --save jsonwebtoken
 Multer:npm install --save multer
 dotenv : npm i express dotenv
-Completer le Fichier env.sample:
+Completer le Fichier .env.sample et modifier son nom en .env
 connection_mongoDb = (votre chemin d'acces a mongoDB)
 cryptoKey = (suite de chiffres et de lettres de votre choix)
 cryptoIv = (suite de chiffres et de lettres de votre choix)
