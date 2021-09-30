@@ -7,7 +7,7 @@ exports.like = (req, res, next) =>{
   })
   .then(thing => {
     //ajouter un like//
-    if(req.body.like===1 && !thing.usersLiked.includes(req.body.userId)){
+    if(req.body.like===1 && !thing.usersLiked.includes(req.body.userId) && !thing.usersDisliked.includes(req.body.userId)){
         thing.usersLiked.push(req.body.userId);
         thing.likes += 1;
         thing.save()
@@ -18,8 +18,13 @@ exports.like = (req, res, next) =>{
       thing.save()
       .then(() => res.status(201).json({ message: 'Like déjà ajouté !'}))
       .catch(error => res.status(400).json({ error }));}
+    //dislike existant//
+    else if(req.body.like===1 && thing.usersDisliked.includes(req.body.userId)){
+      thing.save()
+      .then(() => res.status(201).json({ message: 'Dislike existant !'}))
+      .catch(error => res.status(400).json({ error }));}
     //ajouter un dislike//
-    else if(req.body.like===-1 && !thing.usersDisliked.includes(req.body.userId)){
+    else if(req.body.like===-1 && !thing.usersDisliked.includes(req.body.userId) && !thing.usersLiked.includes(req.body.userId)){
          thing.usersDisliked.push(req.body.userId);
          thing.dislikes += 1;
          thing.save()
@@ -29,6 +34,11 @@ exports.like = (req, res, next) =>{
     else if(req.body.like===-1 && thing.usersDisliked.includes(req.body.userId)){
     thing.save()
     .then(() => res.status(201).json({ message: 'Dislike déjà ajouté !'}))
+    .catch(error => res.status(400).json({ error }));}
+    //like existant//
+    else if (req.body.like===-1 && thing.usersLiked.includes(req.body.userId)){
+      thing.save()
+    .then(() => res.status(201).json({ message: 'like existant!'}))
     .catch(error => res.status(400).json({ error }));}
     //supprimer un like// 
     else if(req.body.like===0 && thing.usersLiked.includes(req.body.userId)){
