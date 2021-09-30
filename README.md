@@ -34,4 +34,4 @@ tokenKey = (suite de chiffres et de lettres de votre choix)
             cd backend
             node server
 7.LANCER SUR VOTRE NAVIGATEUR : http://localhost:4200/
-et c'est parti!!!!!
+8. les mots de passes sont contraint ils doivent contenir une MAJ, un CHIFFRE, une MINUSCULE, un CARACT SPECIAL, et MINIMUN 10 CARACTERES.
